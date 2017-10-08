@@ -40,7 +40,7 @@ lazy val librarySettings = Seq(
   </scm>
     <developers>
       <developer>
-        <id>george.nicoll@gmail.com</id>
+        <id>george.nicoll</id>
         <name>George Nicoll</name>
         <url>https://github.com/georgenicoll</url>
       </developer>
