@@ -17,8 +17,14 @@ object ToneTest extends TestSuite {
       assert(dom.window != null)
     }
 
-    'CheckTopLevelTone {
+    'CheckDynamicTopLevelTone {
       assert(js.Dynamic.global.window.Tone != null)
+    }
+
+    'CheckScalaToneSynthPlays {
+      val synth = new Tone.Synth().toMaster()
+      assert(synth != null)
+      synth.triggerAttackRelease("C6", "16n")
     }
 
   }

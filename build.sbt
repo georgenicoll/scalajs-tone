@@ -69,6 +69,9 @@ lazy val test = Project("scalajs-tone-testing", file("testing"))
       "com.lihaoyi" %%% "utest" % "0.4.4" % "test"
     ),
     skip in packageJSDependencies := false,
+    scalaJSUseMainModuleInitializer := true,
+    emitSourceMaps in fastOptJS := true,
+    relativeSourceMaps := true,
     jsEnv := new org.scalajs.jsenv.selenium.SeleniumJSEnv(
       //requires downloading the chrome driver from
       // http://docs.seleniumhq.org/download/#thirdPartyDrivers
