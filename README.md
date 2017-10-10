@@ -4,3 +4,9 @@
 Very, very early stages.  I am using the project to:
 1. Work out how to wrap a JavaScript library using scalajs
 2. and eventally, see what we can do 'in-browser' with audio
+
+For the time being the project must be built and published locally to be referenced
+i.e. run:
+
+> sbt publishLocal
+  
