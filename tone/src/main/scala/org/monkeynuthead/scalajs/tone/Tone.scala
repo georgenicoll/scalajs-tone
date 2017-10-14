@@ -11,5 +11,7 @@ object Tone extends js.Object {
   class Synth extends js.Object with Outputs with Instrument
   @js.native
   class AMSynth extends js.Object with Outputs with Instrument
+  @js.native
+  class PluckSynth extends js.Object with Outputs with Instrument
 
 }

@@ -34,6 +34,12 @@ object ToneTest extends TestSuite {
       amSynth.triggerRelease()
     }
 
+    'CheckScalaPluckSynthPlays {
+      val synth = new Tone.PluckSynth().toMaster()
+      assert(synth != null)
+      synth.triggerAttackRelease("C4", "8n")
+    }
+
   }
 
 }
