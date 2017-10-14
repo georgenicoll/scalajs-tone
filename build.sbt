@@ -66,6 +66,7 @@ lazy val test = Project("scalajs-tone-testing", file("testing"))
     name := s"scalajs-$scalajs_library_name-testing",
     libraryDependencies ++= Seq(
       "org.scala-js" %%% "scalajs-dom" % "0.9.2",
+      "com.lihaoyi" %%% "scalatags" % "0.6.2",
       "com.lihaoyi" %%% "utest" % "0.4.4" % "test"
     ),
     skip in packageJSDependencies := false,

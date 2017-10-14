@@ -27,6 +27,13 @@ object ToneTest extends TestSuite {
       synth.triggerAttackRelease("C6", "16n")
     }
 
+    'CheckScalaAMSynthAttackRelease {
+      val amSynth = new Tone.AMSynth().toMaster()
+      assert(amSynth != null)
+      amSynth.triggerAttack("A4")
+      amSynth.triggerRelease()
+    }
+
   }
 
 }
