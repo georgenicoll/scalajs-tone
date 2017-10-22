@@ -5,6 +5,8 @@ import scalatags.JsDom.all._
 
 object ToneTestApp {
 
+  import org.monkeynuthead.scalajs.tone.Types._
+
   private[tone] def onLoaded(): Unit = {
     //val synth = new Tone.Synth().toMaster()
     //synth

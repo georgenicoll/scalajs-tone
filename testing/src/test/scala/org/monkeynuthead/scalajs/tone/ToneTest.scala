@@ -7,6 +7,8 @@ import scala.scalajs.js
 
 object ToneTest extends TestSuite {
 
+  import org.monkeynuthead.scalajs.tone.Types._
+
   override def tests = TestSuite {
 
     'DocumentExists {
@@ -17,27 +19,41 @@ object ToneTest extends TestSuite {
       assert(dom.window != null)
     }
 
-    'CheckDynamicTopLevelTone {
+    'DynamicTopLevelTone {
       assert(js.Dynamic.global.window.Tone != null)
     }
 
-    'CheckScalaToneSynthPlays {
+    'ToneSynth {
       val synth = new Tone.Synth().toMaster()
       assert(synth != null)
       synth.triggerAttackRelease("C6", "16n")
     }
 
-    'CheckScalaAMSynthAttackRelease {
+    'AMSynthAttackRelease {
       val amSynth = new Tone.AMSynth().toMaster()
       assert(amSynth != null)
       amSynth.triggerAttack("A4")
       amSynth.triggerRelease()
     }
 
-    'CheckScalaPluckSynthPlays {
+    'FMSynthPortmento {
+      val fmSynth = new Tone.FMSynth().toMaster()
+      assert(fmSynth != null)
+      fmSynth.portamento = "1s"
+      fmSynth.triggerAttack("C4")
+      fmSynth.triggerAttack("D4", "1s")
+      fmSynth.triggerRelease("2s")
+    }
+
+    'PluckSynth {
       val synth = new Tone.PluckSynth().toMaster()
       assert(synth != null)
       synth.triggerAttackRelease("C4", "8n")
+    }
+
+    'Transport {
+      Tone.Transport.start()
+      Tone.Transport.stop()
     }
 
   }
